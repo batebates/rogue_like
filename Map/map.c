@@ -4,6 +4,7 @@
 
 #define N 30
 #define M 80
+#include "couleur.h"
 
 /*****************************************************************/
 /*fonction init_matrice*/
@@ -24,32 +25,34 @@ void afficher_matrice(char matrice[N][M]){
     int i;
     int j;
    	int a;
+	
+	
+	//couleur('0');
 
    	printf("\t");
     //ligne du dessus
    	for(i=0;i<N;i++){
         printf("+");
+        couleur(30);
         for(a=0;a<M;a++){
             printf("-+");
+            couleur(30);
         }
         printf("\n\t|");
         for(j=0;j<M;j++){
             printf("%c|",matrice[i][j]);
+            couleur(37);
         }
         printf("\n\t");
+        couleur(30);
     }
     //ligne du bas
     printf("+");
     for(a=0;a<M;a++){
         printf("-+");
+        couleur(30);
     }
     printf("\n");
-}
-
-int main(void){
-	char matrice[N][M];
-	init_matrice(matrice);
-	afficher_matrice(matrice);
-
-
+    
+    couleur(0);
 }

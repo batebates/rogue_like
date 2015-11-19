@@ -4,10 +4,10 @@
 #include <stdio.h>
 
 // Efface l'écran et replace le curseur en haut à gauche
-#define clrscr() printf("\033[H\033[2J")
+#define clrscr() (printf("\033[H\033[2J"))
 
 // Sélection de couleurs
-#define couleur(param) printf("\033[%im",param)
+#define couleur(param) (printf("\033[%im",param))
 /*0 réinitialisation 
 1 haute intensité (des caractères)
 5 clignotement 

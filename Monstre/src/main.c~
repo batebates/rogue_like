@@ -1,0 +1,34 @@
+
+#include<stdio.h>
+#include "../include/liste.h"
+#include "../include/struct.h"
+
+t_personne liste[TAILLE_MAX];
+void echange(int i,int j){
+	t_personne tampon;
+	tampon.sexe=liste[i].sexe;
+	strcpy(tampon.prenom,liste[i].prenom);
+	liste[i].sexe=liste[j].sexe;
+	strcpy(liste[i].prenom,liste[j].prenom);
+	liste[j].sexe=tampon.sexe;
+	strcpy(liste[j].prenom,tampon.prenom);
+}
+
+void main(){
+	int i=0,j=TAILLE_MAX;
+	while((TAILLE_MAX%2==0 && i-j!=1) || (TAILLE_MAX%2==0 && i-j!=0)){
+		if(liste[i].sexe=='H' && liste[j].sexe=='F'){
+			echange(i,j);
+			i++;
+			j--;
+		}
+		else if(liste[i].sexe=='F' && liste[j].sexe=='H'){
+			i++;
+			j--;
+		}
+		else if(liste[i].sexe=='F' && liste[j].sexe=='F'){
+			i++;
+		}
+		else j--;
+	}
+}

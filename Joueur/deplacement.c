@@ -2,8 +2,8 @@
 #include <unistd.h>
 #define DELAY 30000
 
-int main(int argc, char *argv[]) {
-  int x = 0, y = 0;
+int main(void) {
+  int x = 0, y = 0, y_init=0;
   
   initscr();
   noecho();
@@ -16,7 +16,11 @@ int main(int argc, char *argv[]) {
     refresh();
     usleep(DELAY);       // Shorter delay between movements
     x++;		// Advance the ball to the right
-    y++;		
+    y++;
+    
+    if (y==20) y=++y_init;
+        if (x==20) { x=0;  }
+    		
   }
   
   endwin();

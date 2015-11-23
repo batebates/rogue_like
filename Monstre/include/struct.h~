@@ -1,8 +1,9 @@
-#define TAILLE_MAX 100
+#define N 7
+#define M 7
 #ifndef STRUCT_H_INCLUDED
 #define STRUCT_H_INCLUDED
-typedef struct{char sexe;char prenom[20];}t_personne;
+typedef enum{vide,mur,joueur,ennemi}t_cellule;
 
-typedef struct element{char c; struct element * suivant;}t_element;
+typedef struct{int x; int y;}t_coord;
 
 #endif

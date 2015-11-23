@@ -1,6 +1,6 @@
 CC=gcc
 FLAG=-Wall -W
-OBJ= main.o liste.o
+OBJ= main.o IA.o
 JOB= ./include/*.h
 SRC=./src/
 all:main.exe clean
@@ -11,8 +11,8 @@ main.exe: ${OBJ}
 struct.o: ${SRC}struct.c ${JOB}
 	${CC} -c ${SRC}struct.c ${FLAG}
 
-liste.o: ${SRC}liste.c ${JOB}
-	${CC} -c ${SRC}liste.c ${FLAG} 
+IA.o: ${SRC}IA.c ${JOB}
+	${CC} -c ${SRC}IA.c ${FLAG} 
 
 main.o: ${SRC}main.c ${JOB}
 	${CC} -c ${SRC}main.c ${JOB} ${FLAG}

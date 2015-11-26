@@ -1,5 +1,5 @@
 CC=gcc
-FLAG=-Wall -W
+FLAG=-Wall -W -g
 OBJ= main.o IA.o
 JOB= ./include/*.h
 SRC=./src/
